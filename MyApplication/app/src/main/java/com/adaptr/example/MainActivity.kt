@@ -25,6 +25,7 @@ class MainActivity : AppCompatActivity() , PlayListener, UnhandledErrorListener,
         Adaptr.getPlayerInstance(object : AvailabilityListener {
             override fun onPlayerAvailable(player: AdaptrPlayer) {
 
+                loading.visibility = View.INVISIBLE
                 myPlayer = player
                 // Add our listeners
                 player.addPlayListener(this@MainActivity)
@@ -103,12 +104,14 @@ class MainActivity : AppCompatActivity() , PlayListener, UnhandledErrorListener,
     override fun onStateChanged(state: State) {
 
         if (state == State.PLAYING) {
+            loading.visibility = View.INVISIBLE
             val menu: Menu = bottom_navigation.menu
             val itm = menu.findItem(R.id.action_play_pause)
             itm.title = "Pause"
             itm.setIcon(android.R.drawable.ic_media_pause)
             //stateTv.setText("PLAYING");
         } else if (state == State.PAUSED) {
+            loading.visibility = View.INVISIBLE
             val menu: Menu = bottom_navigation.menu
             val itm = menu.findItem(R.id.action_play_pause)
             itm.title = "Play"
@@ -118,8 +121,10 @@ class MainActivity : AppCompatActivity() , PlayListener, UnhandledErrorListener,
             loading.visibility = View.VISIBLE
             //stateTv.setText("STALLED");
         } else if (state == State.WAITING_FOR_ITEM) {
+            loading.visibility = View.VISIBLE
             //stateTv.setText("WAITING_FOR_ITEM");
         } else if (state == State.READY_TO_PLAY || state == State.AVAILABLE_OFFLINE_ONLY) {
+            loading.visibility = View.INVISIBLE
             //stateTv.setText("READY_TO_PLAY");
         }
     }
