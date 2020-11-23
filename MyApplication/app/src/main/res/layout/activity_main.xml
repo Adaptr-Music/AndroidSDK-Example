@@ -86,13 +86,13 @@ tools:context=".MainActivity">
     android:layout_alignBottom="@+id/current_position"
     android:layout_alignParentStart="true" />
 
-<TextView
-    android:id="@+id/textView"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_above="@+id/loading"
-    android:layout_alignStart="@+id/loading"
-    android:textColor="@color/white"
-    android:text="State" />
+<!--<TextView-->
+<!--    android:id="@+id/textView"-->
+<!--    android:layout_width="wrap_content"-->
+<!--    android:layout_height="wrap_content"-->
+<!--    android:layout_above="@+id/loading"-->
+<!--    android:layout_alignStart="@+id/loading"-->
+<!--    android:textColor="@color/white"-->
+<!--    android:text="State" />-->
 
 </RelativeLayout>
