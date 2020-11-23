@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:id="@+id/background"
+android:background="@android:color/widget_edittext_dark"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+tools:context=".MainActivity">
+
+<TextView
+    android:id="@+id/tracktitle"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="22dp"
+    android:textSize="18sp"
+    android:textAppearance="@style/TextAppearance.AppCompat.Large"
+    android:textColor="@android:color/primary_text_dark" />
+
+<TextView
+    android:id="@+id/artist"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_alignStart="@+id/tracktitle"
+    android:layout_below="@+id/tracktitle"
+    android:textSize="16sp"
+    android:textColor="@android:color/primary_text_dark"/>
+
+<ScrollView
+
+    android:layout_above="@id/bottom_navigation"
+    android:layout_width="match_parent"
+    android:layout_height="300dp">
+    <LinearLayout
+        android:id="@+id/station_buttons"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" />
+</ScrollView>
+
+
+<com.google.android.material.bottomnavigation.BottomNavigationView
+    android:id="@+id/bottom_navigation"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_alignParentBottom="true"
+    app:itemIconTint="@android:color/darker_gray"
+    app:itemTextColor="@android:color/darker_gray"
+    app:menu="@menu/bottom_navigation_main" />
+
+<ProgressBar
+    android:id="@+id/loading"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_alignTop="@+id/tracktitle"
+    android:layout_centerHorizontal="true" />
+
+<ProgressBar
+    android:id="@+id/progressBar"
+    style="?android:attr/progressBarStyleHorizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_below="@+id/artist"
+    android:layout_centerHorizontal="true"
+    android:layout_marginTop="33dp" />
+
+<TextView
+    android:id="@+id/current_position"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_alignTop="@+id/progressBar"
+    android:layout_marginTop="24dp"
+    android:layout_toEndOf="@+id/artist"/>
+
+<TextView
+    android:id="@+id/total_duration"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_alignEnd="@+id/progressBar"
+    android:layout_alignTop="@+id/current_position"/>
+
+<SeekBar
+    android:id="@+id/seekBar"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_alignBottom="@+id/current_position"
+    android:layout_alignParentStart="true" />
+
+<TextView
+    android:id="@+id/textView"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_above="@+id/loading"
+    android:layout_alignStart="@+id/loading"
+    android:textColor="@color/white"
+    android:text="State" />
+
+</RelativeLayout>
